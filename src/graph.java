@@ -2,6 +2,10 @@ import java.util.*;
 public class graph {
     private LinkedList<Integer>[] adj;
 
+    public LinkedList<Integer>[] getAdj() {
+        return adj;
+    }
+
     public graph(int vertices)
     {
         adj=new LinkedList[vertices];
