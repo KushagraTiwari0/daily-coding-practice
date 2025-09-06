@@ -25,6 +25,36 @@ public class graph {
             System.out.println(i+" --> "+adj[i]);
     }
 
+    public static int[][] convertToArray(LinkedList<Integer>[]adj)
+    {
+        int res[][]=new int[adj.length][];
+        for(int i=0;i<adj.length;i++)
+        {
+            res[i]=new int[adj[i].size()];
+            for(int j=0;j<adj[i].size();j++)
+            {
+                res[i][j]=adj[i].get(j);
+            }
+        }
+        return res;
+    }
+
+    public void printArray(int [][] res) {
+        for (int i = 0; i < res.length; i++) {
+            System.out.print( i + " -> [");
+            for (int j = 0; j < res[i].length; j++) {
+                System.out.print(res[i][j]);
+                if (j < res[i].length - 1) {
+                    System.out.print(", ");
+                }
+            }
+            System.out.println("]");
+        }
+    }
+
+
+
+
     public static void main(String args[])
     {
         graph g=new graph(6);
@@ -36,6 +66,8 @@ public class graph {
         g.addEdge(2,3);
         g.addEdge(3,5);
         g.print();
+        int res[][]=convertToArray(g.getAdj());
+        g.printArray(res);
     }
 
 }
