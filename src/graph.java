@@ -25,18 +25,16 @@ public class graph {
             System.out.println(i+" --> "+adj[i]);
     }
 
-    public static int[][] convertToArray(LinkedList<Integer>[]adj)
-    {
-        int res[][]=new int[adj.length][];
-        for(int i=0;i<adj.length;i++)
-        {
-            res[i]=new int[adj[i].size()];
-            for(int j=0;j<adj[i].size();j++)
-            {
-                res[i][j]=adj[i].get(j);
+    public static int[][] convertToArray(LinkedList<Integer>[] adj) {
+        List<int[]> edges = new ArrayList<>();
+        for (int i = 0; i < adj.length; i++) {
+            for (int neighbor : adj[i]) {
+                if (i < neighbor) { // avoid duplicates
+                    edges.add(new int[]{i, neighbor});
+                }
             }
         }
-        return res;
+        return edges.toArray(new int[0][]);
     }
 
     public void printArray(int [][] res) {
