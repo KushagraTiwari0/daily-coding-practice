@@ -5,7 +5,8 @@ public class graph {
     public LinkedList<Integer>[] getAdj() {
         return adj;
     }
-
+    
+    @SuppressWarnings("unchecked")
     public graph(int vertices)
     {
         adj=new LinkedList[vertices];

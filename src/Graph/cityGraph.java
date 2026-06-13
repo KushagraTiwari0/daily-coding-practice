@@ -3,7 +3,8 @@ public class cityGraph {
 
     private LinkedList<String>[] nbrs;
     private Map<String,Integer> cityIndex;
-
+    
+    @SuppressWarnings("unchecked")
     public cityGraph(List<String> cities)
     {
         int n=cities.size();
