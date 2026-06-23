@@ -1,6 +1,7 @@
 package StriverSheet.Array.Medium;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class TwoSum {
@@ -10,7 +11,7 @@ public class TwoSum {
         int n=a.length;
         for(int i=0;i<n;i++)
         {
-            for(int j=i;j<n;j++)
+            for(int j=i+1;j<n;j++)
             {
                 if(a[i]+a[j]==t)
                 {
@@ -44,6 +45,21 @@ public class TwoSum {
         }
         return false;
     }
+    
+    public static int[] hashTwoSum(int a[],int t)
+    {
+        HashMap<Integer,Integer> h=new HashMap<>();
+        for(int i=0;i<a.length;i++)
+        {
+            int need=t-a[i];
+            if(h.containsKey(need))
+            {
+                return new int []{h.get(need),i};
+            }
+            h.put(a[i],i);
+        }
+        return new int[]{-1,-1};
+    }
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
         System.out.print("Enter size of Array -> ");
@@ -58,7 +74,8 @@ public class TwoSum {
         int t=sc.nextInt();
         if(optiTwoSum(a, t))
         {
-            System.out.println("Yes Pair exist ");
+            int[] res=hashTwoSum(a, t);
+            System.out.println("Yes Pair exist ["+res[0]+","+res[1]+"]");
         }
         else
         {
