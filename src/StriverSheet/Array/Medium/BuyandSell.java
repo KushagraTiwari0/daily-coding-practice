@@ -16,7 +16,7 @@ public class BuyandSell {
             }
             else
             {
-                maxPrice=Math.max(maxPrice,a[i]-maxPrice);
+                maxPrice=Math.max(maxPrice,a[i]-minPrice);
             }
         }
         System.out.println("Maximum Profit -> "+maxPrice);
