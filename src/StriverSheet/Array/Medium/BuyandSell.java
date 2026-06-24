@@ -22,18 +22,20 @@ public class BuyandSell {
         System.out.println("Maximum Profit -> "+maxPrice);
     }
     public static void main(String[] args) {
-     Scanner sc = new Scanner(System.in);
-        System.out.print("Enter size of Array -> ");
-        int n = sc.nextInt();
-        if (n < 1) {
-            System.out.println("No Elements ");
-            return;
-        }
-        System.out.println("Enter elements of Array -> ");
-        int a[] = new int[n];
-        for (int i = 0; i < n; i++) {
-            a[i] = sc.nextInt();
-        }  
+    Scanner sc = new Scanner(System.in);
+    System.out.print("Enter size of Array -> ");
+    int n = sc.nextInt();
+    if (n < 1) 
+    {
+        System.out.println("No Elements ");
+        return;
+    }
+    System.out.println("Enter elements of Array -> ");
+    int a[] = new int[n];
+    for (int i = 0; i < n; i++)
+    {
+        a[i] = sc.nextInt();
+    }  
         bas( a, n); 
     }
 }
