@@ -70,3 +70,8 @@ class ThreeSum {
         sum(a,n);
     }
 }
+//In this question we are given with set of number like 2 0 1 -1 -2 we have to find unique element whhose sum is 0 and  print them we only have to select 3 numbsers at once
+// suppose -1 0 1 2 -1 -4
+// -1 + 0 + 1=0 three numbers sum upto 0
+// -1  + -1 + 2=0 three numbers sum =0
+// wWe need to derive logics and also best way to do it Logical thinking!!
